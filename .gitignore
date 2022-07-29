@@ -1,0 +1,6 @@
+*.bat
+*.sqlite3
+.git
+*.idea
+venv/
+__pycache__/

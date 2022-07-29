@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title%}Login{% endblock %}
+{% block content %}
+<div class="log-form">
+    {% for msg in messages %}
+    <div style="margin-bottom:0px;" class="alert alert-success" role="alert">
+        {{ msg }}
+    </div>
+    {% endfor %}
+    <h2>Login to your account</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn">Login</button>
+        <a class="forgot" href="{% url 'register' %}">Create an account</a>
+    </form>
+</div>
+{% endblock %}

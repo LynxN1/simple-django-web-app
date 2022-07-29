@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-6">
+        <table class="table">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <th scope="row">Username</th>
+                <td>{{ request.user.username }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Email</th>
+                <td>{{ request.user.email }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Staff</th>
+                <td>{{ request.user.is_staff }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Superuser</th>
+                <td>{{ request.user.is_superuser }}</td>
+                {% if request.user.is_superuser %}
+                <td><a href="{% url 'admin:index' %}">Admin panel</a></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th scope="row">Last login</th>
+                <td>{{ request.user.last_login|date:'d-m-Y H:i:s' }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Created at</th>
+                <td>{{ request.user.date_joined|date:'d-m-Y H:i:s' }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{% url 'logout' %}" class="btn btn-link">Logout</a>
+    </div>
+</div>
+{% endblock %}

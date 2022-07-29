@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title%}Register{% endblock %}
+{% block content %}
+<div class="log-form">
+    <h2>Create an account</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.username }}
+        {{ form.email }}
+        {{ form.password1.help_text }}
+        {{ form.password1 }}
+        {{ form.password2 }}
+        {% if form.errors %}
+        {% for i in form.errors.values %}
+        <span style="color: red;">{{ i }}</span>
+        {% endfor %}
+        {% endif %}
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+{% endblock %}
