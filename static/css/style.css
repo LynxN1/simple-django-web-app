@@ -1,0 +1,14 @@
+.container {
+    height: 95vh;
+    overflow: auto;
+    background-color: white;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 3%;
+}
+body {
+    background: rgb(234,227,210)!important;
+    background: linear-gradient(180deg, rgba(234,227,210,1) 0%, rgba(249,245,235,1) 79%)!important;
+}
+.list-group {
+    word-break: break-all;
+}
