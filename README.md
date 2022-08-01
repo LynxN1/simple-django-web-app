@@ -1,3 +1,3 @@
 # simple-django-web-app
 
-Functionality will be expanded over time
+Features and new applications may be added over time
