@@ -1,11 +1,12 @@
-function modalLoad() {
-    $.ajax({
-        url: "/tasks/create",
+$(".open-modal-btn").click(function () {
+        var url = $(this).attr("data-url");
+        $.ajax({
+        url: url,
         type: "GET",
         dataType: "HTML",
         success: function (data) {
-            $("#exampleModal").html(data);
-            $("#exampleModal").modal("show");
+            $("#ajaxModal").html(data);
+            $("#ajaxModal").modal("show");
         }
     })
-}
+});

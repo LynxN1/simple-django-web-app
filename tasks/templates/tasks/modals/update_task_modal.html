@@ -1,0 +1,16 @@
+{% extends 'tasks/modals/base_modal.html' %}
+
+{% block modal_title %}Update task{% endblock %}
+
+{% block modal_form %}
+<form method="POST" action="{% url 'update_task' object.pk %}">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.title }}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>
+{% endblock %}

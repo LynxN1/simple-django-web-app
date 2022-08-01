@@ -1,0 +1,16 @@
+{% extends 'tasks/modals/base_modal.html' %}
+
+{% block modal_title %}Delete task{% endblock %}
+
+{% block modal_form %}
+<form method="POST" action="{% url 'delete_task' object.pk %}">
+    {% csrf_token %}
+    <div class="form-group">
+        Are you sure?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </div>
+</form>
+{% endblock %}

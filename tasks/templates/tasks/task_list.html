@@ -1,7 +1,19 @@
 <div class="list-group m-3">
     {% if object_list %}
     {% for obj in object_list %}
-    <a href="#" class="list-group-item list-group-item-action mt-1 mb-1">{{ obj.title }}</a>
+    <div class="d-flex justify-content-between">
+        <a href="#" class="list-group-item list-group-item-action mt-1 mb-1 col-11">{{ obj.title }}</a>
+        <button type="button"
+                data-url="{% url 'update_task' obj.pk%}"
+                class="open-modal-btn btn my-auto">
+            <i class="bi bi-pencil-square"></i>
+        </button>
+        <button type="button"
+                data-url="{% url 'delete_task' obj.pk%}"
+                class="open-modal-btn btn my-auto text-danger">
+            <i class="bi bi-trash-fill"></i>
+        </button>
+    </div>
     {% endfor %}
     {% else %}
     <h2>You have no tasks...</h2>
